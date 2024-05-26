@@ -1,0 +1,77 @@
+[
+  {
+    "unique_parameter_name": "layer1.weight",
+    "array_values": {
+      "values": [
+        1.0,
+        2.0,
+        3.0,
+        4.0
+      ]
+    }
+  },
+  {
+    "unique_parameter_name": "layer1.bias",
+    "array_values": {
+      "values": [
+        1.0,
+        2.0,
+        3.0,
+        4.0
+      ]
+    }
+  },
+  {
+    "unique_parameter_name": "layer2.weight",
+    "array_values": {
+      "values": [
+        11.0,
+        12.0,
+        13.0,
+        14.0,
+        21.0,
+        22.0,
+        23.0,
+        24.0,
+        31.0,
+        32.0,
+        33.0,
+        34.0,
+        41.0,
+        42.0,
+        43.0,
+        44.0
+      ]
+    }
+  },
+  {
+    "unique_parameter_name": "layer2.bias",
+    "array_values": {
+      "values": [
+        1.0,
+        2.0,
+        3.0,
+        4.0
+      ]
+    }
+  },
+  {
+    "unique_parameter_name": "output_layer.weight",
+    "array_values": {
+      "values": [
+        1.0,
+        2.0,
+        3.0,
+        4.0
+      ]
+    }
+  },
+  {
+    "unique_parameter_name": "output_layer.bias",
+    "array_values": {
+      "values": [
+        1.0
+      ]
+    }
+  }
+]
