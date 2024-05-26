@@ -3,12 +3,14 @@ package de.jugda.nn
 class Neuron(private val weights: FloatArray, private val bias: Float, val activation: (Float) -> Float) {
 
     fun forward(inputs: FloatArray): Float {
-        val sum = inputs
-            .zip(weights)
-            .fold(0.0f) { acc, (input, weight) ->
-                acc + (input * weight)
-            } + bias
-        return activation(sum)
+        if (weights.isNotEmpty()) {
+            val sum = inputs.foldIndexed(0.0f) { i, acc, input ->
+                acc + (input * weights[i])
+            }
+            return activation(sum + bias)
+        } else {
+            return inputs.fold(0.0f) { _, input -> input }
+        }
     }
 
     override fun toString(): String {

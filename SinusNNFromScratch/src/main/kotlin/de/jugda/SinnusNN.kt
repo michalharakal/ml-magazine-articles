@@ -12,6 +12,19 @@ private fun List<ArrayValues>.getBy(name: String): FloatArray {
     return FloatArray(0)
 }
 
+fun transpose(matrix: FloatArray, size: Int): FloatArray {
+
+    val transposed = FloatArray(size * size)
+
+    for (i in 0 until size) {
+        for (j in 0 until size) {
+            transposed[j * size + i] = matrix[i * size + j]
+        }
+    }
+
+    return transposed
+}
+
 fun create(weightAndBiases: List<ArrayValues>, neuronsInHiddenLayer: Int): DenseNet {
     val input = Layer(
         listOf(
@@ -31,12 +44,17 @@ fun create(weightAndBiases: List<ArrayValues>, neuronsInHiddenLayer: Int): Dense
             )
         }
     )
+    val allWeights = weightAndBiases.getBy("layer2.weight")
+    val weightsT = transpose(allWeights, neuronsInHiddenLayer)
     val hidden2 = Layer(
+
         List(neuronsInHiddenLayer) { index ->
-            val weigths = weightAndBiases.getBy("layer2.weight")
-                .copyOfRange(index * neuronsInHiddenLayer, index * neuronsInHiddenLayer + neuronsInHiddenLayer)
+            val neuronWeights = weightsT.copyOfRange(
+                index * neuronsInHiddenLayer,
+                index * neuronsInHiddenLayer + neuronsInHiddenLayer
+            )
             Neuron(
-                weigths,
+                neuronWeights,
                 weightAndBiases.getBy("layer2.bias")[index],
                 relu
             )
