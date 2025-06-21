@@ -13,9 +13,8 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "skainet"
+rootProject.name = "mnist-skainet"
 include(":core")
 include(":io")
 include(":gguf")
 include(":model-zoo")
-include(":samples:mnist-mlp-cli")

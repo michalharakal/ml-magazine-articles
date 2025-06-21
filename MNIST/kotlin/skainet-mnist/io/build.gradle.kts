@@ -70,21 +70,9 @@ android {
     }
 }
 
-publishing {
-    repositories {
-        maven {
-            name = "githubPackages"
-            url = uri("https://maven.pkg.github.com/sk-ai-net/skainet")
-            credentials {
-                credentials(PasswordCredentials::class)
-            }
-        }
-    }
-}
-
 mavenPublishing {
 
-    coordinates(group.toString(), "io", version.toString())
+    coordinates(group.toString(), "mnist-io", version.toString())
 
     pom {
         description.set("skainet")

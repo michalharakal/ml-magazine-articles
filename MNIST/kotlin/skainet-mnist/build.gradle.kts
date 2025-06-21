@@ -4,16 +4,9 @@ plugins {
     alias(libs.plugins.jetbrainsKotlinJvm) apply false
     alias(libs.plugins.binaryCompatibility) apply false
     alias(libs.plugins.modulegraph.souza) apply true
-
-
 }
 
 allprojects {
-    group = "sk.ai.net"
-    version = "0.0.6.1"
-}
-
-moduleGraphConfig {
-    readmePath.set("./Modules.md")
-    heading = "### Module Graph"
+    group = "sk.ai.net.article"
+    version = "0.0.1"
 }
